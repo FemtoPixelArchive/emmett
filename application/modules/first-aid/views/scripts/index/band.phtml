@@ -1,0 +1,16 @@
+		<?php if (count($this->members)) :?>
+		<a href="#" id="prev"><img src='<?php echo $this->baseUrl() ?>/img/first-aid/button_prev.png' /></a>
+		<a href="#" id="next"><img src='<?php echo $this->baseUrl() ?>/img/first-aid/button_next.png' /></a>
+		<?php endif; ?>
+		
+		<div id="nav-list">
+			<div id='wrapper'>
+				<?php foreach ($this->members as $member => $title) :?>
+				<div class="li">
+					<div class="member">
+						<?php echo $this->render('band/' . $member . '.phtml') ?>
+					</div>	
+				</div>
+				<?php endforeach; ?>
+			</div>
+		</div>

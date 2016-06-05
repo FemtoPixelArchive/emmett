@@ -1,0 +1,22 @@
+#news {
+	margin-top: 100px;
+	height:70%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+	overflow-y:scroll;
+}
+
+#news .picture img {
+	width:130px;
+}
+
+#news .facebook, #news .twitter {
+	margin-top:20px;
+	margin-bottom:20px;
+	padding:20px;
+	border:solid 1px #fff;
+	margin-right:20px;
+	border-radius: 15px;
+	background-color: rgba(255, 255, 255, 0.2);
+}

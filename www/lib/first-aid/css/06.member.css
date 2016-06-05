@@ -1,0 +1,44 @@
+#nav-list .member, #contentlist {
+	margin-top: 100px;
+	margin-left: auto;
+	margin-right: auto;
+	width: 80%;
+}
+
+.member .description {
+	vertical-align:top;
+	padding-left:50px;
+}
+
+.member .social {
+	padding-left:50px;
+}
+
+.member .info {
+	float:left;
+	margin-left:20px;
+}
+
+.member {
+	overflow:none;
+}
+
+.tooltip {
+	display:none;
+	background:url(/img/white_arrow.png);
+	height:100px;
+	padding:20px 20px 10px 12px;
+	width:180px;
+	font-size:11px;
+	color:#000;
+	text-align:center;
+	position:absolute;
+}
+
+/*.photos{
+	height:400px;
+	width:300px;
+}*/
+.cs-title {
+	width:300px;
+}

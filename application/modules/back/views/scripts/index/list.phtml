@@ -1,0 +1,67 @@
+<?php
+	$fieldsName = '<tr>';
+	foreach ($this->cols as $colName) {
+		if (!isset($this->config['forms']['delete'][$this->model]['elements'][$colName])) {
+			$fieldsName .= '<th>' . (isset($this->config['forms'][$this->model]['elements'][$colName]['options']['label']) ? $this->config['forms'][$this->model]['elements'][$colName]['options']['label'] : $colName) . '</th>'; 
+		}
+	}
+	$fieldsName .= '<th>Options</th></tr>';
+?>
+<?php if ($this->layout()->acl->checkRight(array('module' => 'back', 'controller' => 'index', 'action' => 'add', 'model' => $this->model), true)) : ?>
+<a href='<?php echo $this->url(array('module' => 'back', 'controller' => 'index', 'action' => 'add', 'model' => $this->model), null, true) ?>'>Ajouter</a>
+<?php endif; ?>
+<?php if ($this->layout()->acl->checkRight(array('module' => 'back', 'controller' => 'index', 'action' => 'search', 'model' => $this->model), true)) : ?>
+|	<a href='<?php echo $this->url(array('module' => 'back', 'controller' => 'index', 'action' => 'search', 'model' => $this->model), null, true) ?>'>Rechercher</a>
+<?php endif; ?>
+<?php if ($this->layout()->acl->checkRight(array('format' => 'csv', 'file' => 'export.csv'))) : ?>
+|	<a href='<?php echo $this->url(array('format' => 'csv', 'file' => 'export.csv')) ?>'>Exporter au format CSV</a>
+<?php endif; ?>
+<?php if (isset($this->searchText) && !empty($this->searchText)) : ?>
+		<div id="search-text">
+			<h5>Résultat de la recherche :</h5>
+			<ul>
+			<?php
+			foreach($this->searchText as $key => $searchText) {
+				if ($key) { echo '<li>ET</li>'; }
+				echo '<li>' . $searchText . '</li>';
+			}
+			?>
+			</ul>
+		</div>
+<?php endif; ?>
+<table>
+<?php echo $fieldsName; ?>
+<?php if (count($this->data) == 0): ?>
+	<tr><td>Aucun résultat.</td></tr>
+<?php
+	else :
+		foreach($this->data as $line => $item) : ?>
+<tr>
+<?php foreach($item as $name => $data) :
+		if (!isset($this->config['forms']['delete'][$this->model]['elements'][$name])) :?>
+	<td><?php echo $this->truncateString($data) ?></td>
+<?php 	endif;
+endforeach; ?>
+	<td>
+		<?php if ($this->layout()->acl->checkRight(array('action' => 'edit', 'id' => $item->getPrimaryKey()))) : ?>
+		<a href='<?php echo $this->url(array('action' => 'edit', 'id' => $item->getPrimaryKey())) ?>'>Editer</a>
+		<?php endif; ?>
+		<?php if ($this->layout()->acl->checkRight(array('action' => 'delete', 'id' => $item->getPrimaryKey()))) : ?>
+		<a class='delete' href='<?php echo $this->url(array('action' => 'delete', 'id' => $item->getPrimaryKey())) ?>'>Supprimer</a>
+		<?php endif; ?>
+	</td>
+</tr>
+<?php endforeach;
+	endif;
+?>
+<?php echo $fieldsName; ?>
+</table>
+<?php echo $this->data ?>
+
+<script type='text/javascript'>
+	$('.delete').click(function(e) {
+		if (!confirm('Etes-vous sur de vouloir supprimer cette entrée ?')) {
+			e.preventDefault();
+		}
+	});
+</script>

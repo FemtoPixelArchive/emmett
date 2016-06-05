@@ -1,0 +1,56 @@
+@-moz-keyframes play {
+	to {
+		-moz-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes play {
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes play {
+	to {
+		-o-transform: rotate(360deg);
+	}
+}
+
+@-ms-keyframes play {
+	to {
+		-ms-transform: rotate(360deg);
+	}
+}
+
+@keyframes play {
+	to {
+		transform: rotate(360deg);
+	}
+}
+			
+.playcd {
+	-moz-animation-name: play;
+	-moz-animation-timing-function: linear;
+	-moz-animation-duration: 30s;
+	-moz-animation-iteration-count: infinite;
+	
+	-webkit-animation-name: play;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-duration: 30s;
+	-webkit-animation-iteration-count: infinite;
+	
+	-o-animation-name: play;
+	-o-animation-timing-function: linear;
+	-o-animation-duration: 30s;
+	-o-animation-iteration-count: infinite;
+	
+	-ms-animation-name: play;
+	-ms-animation-timing-function: linear;
+	-ms-animation-duration: 30s;
+	-ms-animation-iteration-count: infinite;
+	
+	animation-name: play;
+	animation-timing-function: linear;
+	animation-duration: 30s;
+	animation-iteration-count: infinite;
+}

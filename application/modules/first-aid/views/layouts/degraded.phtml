@@ -1,0 +1,67 @@
+<?php echo $this->doctype() ?>
+<html prefix="og: http://ogp.me/ns#">
+	<head>
+		<?php echo $this->headTitle();
+			echo $this->headMeta(); ?>
+		<?php if (ENVIRONMENT == 'prod') : ?>
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->version('first-aid', 'css') ?>" />
+		<?php else : ?>
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/lib/first-aid/css/01.cover.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/lib/first-aid/css/02.disk.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/lib/first-aid/css/03.zen.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/lib/first-aid/css/04.style.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/lib/first-aid/css/05.coin-slider-styles.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/lib/first-aid/css/06.member.css" />
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/lib/first-aid/css/07.news.css" />		
+		<link rel="stylesheet" type="text/css" href="<?php echo $this->baseUrl() ?>/lib/first-aid/css/08.mediaqueries.css" />		
+		<?php endif; ?>
+		<meta property="og:title" content="<?php echo tr('Something new is coming...') ?>" />
+		<meta property="og:url" content="http://<?php echo $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']?>" />
+		<meta property="og:image" content="http://<?php echo $_SERVER['SERVER_NAME'] ?>/img/first-aid/sharefb.png" />
+		<meta property="og:description" content="<?php echo tr('.. and you can find out what by discovering this website...') ?>" />
+		
+		<link rel="icon" href="<?php echo $this->baseUrl() ?>/favicon.gif" type="image/gif" />
+		<link rel="alternate" type="application/rss+xml" title="<?php echo tr('EMMETT Latest News')?> (RSS)" href="http://www.emmett.eu/rss" />
+		<link rel="alternate" type="application/atom+xml" title="<?php echo tr('EMMETT Latest News')?> (Atom)" href="http://www.emmett.eu/atom" />
+	</head>
+	<body>
+		<div id='menu'>
+			<table>
+				<tr>
+					<!--td><a href='<?php echo $this->url(array('controller' => 'index', 'action' => 'news', 'lang' => Zend_Registry::getInstance()->locale, 'module' => 'first-aid'), 'news') ?>'><?php echo tr('News')?></a></td-->
+					<td><a href='<?php echo $this->url(array('controller' => 'index', 'action' => 'band', 'lang' => Zend_Registry::getInstance()->locale, 'module' => 'first-aid'), 'band') ?>'><?php echo tr('Band')?></a></td>
+					<td><a href='<?php echo $this->url(array('controller' => 'misc', 'action' => 'index', 'lang' => Zend_Registry::getInstance()->locale, 'module' => 'first-aid'), 'front') ?>'><?php echo tr('Misc')?></a></td>
+					<!--td><a href='<?php echo $this->url(array('controller' => 'index', 'action' => 'store', 'lang' => Zend_Registry::getInstance()->locale, 'module' => 'first-aid'), 'store') ?>'><?php echo tr('Store')?></a></td-->
+				</tr>
+			</table>
+		</div>
+		
+		<div id='content'>
+			<?php echo $this->layout()->content ?>
+		</div>
+		
+		<div id='donate'>
+			<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="hosted_button_id" value="Y64LAX2HZQQBJ">
+				<?php if ($this->layout()->locale == 'fr') : ?>
+				<input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+				<?php else : ?>
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<?php endif; ?>
+				<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+			</form>
+		</div>
+		<div id='nyan' style='display:none;'><img src='<?php echo $this->baseUrl() ?>/img/nyan.gif' /></div>
+		<div id='footer'>
+			<a href='http://facebook.emmett.eu/' title='Facebook' target='_blank'><img src='<?php echo $this->baseUrl() ?>/img/first-aid/facebook.png' /></a>
+			<a href='http://twitter.emmett.eu/' title='Twitter' target='_blank'><img src='<?php echo $this->baseUrl() ?>/img/first-aid/twitter.png' /></a>
+			<a href='http://youtube.emmett.eu/' title='Youtube' target='_blank'><img src='<?php echo $this->baseUrl() ?>/img/first-aid/youtube.png' /></a>
+			<a href='http://soundcloud.emmett.eu/' title='SoundCloud' target='_blank'><img src='<?php echo $this->baseUrl() ?>/img/first-aid/soundcloud.png' style='margin-bottom:5px;'/></a>
+			<a href='http://myspace.emmett.eu/' title='MySpace' target='_blank'><img src='<?php echo $this->baseUrl() ?>/img/first-aid/myspace.png' /></a>
+			<a href='http://reverbnation.emmett.eu/' title='ReverbNation' target='_blank'><img src='<?php echo $this->baseUrl() ?>/img/first-aid/reverbnation.png' style='width:55px;height:55px;margin-bottom:6px;'/></a>
+			<!--a href='http://zikcard.emmett.eu/' title='ZikCard' target='_blank'><img src='<?php echo $this->baseUrl() ?>/img/first-aid/zikcard.png' /></a-->
+			<a href='mailto:contact@emmett.eu' title='Contact' target='_blank'><img src='<?php echo $this->baseUrl() ?>/img/first-aid/mail.png'  style='width:60px;height:60px;margin-bottom:2px;'/></a>
+		</div>
+	</body>
+</html>

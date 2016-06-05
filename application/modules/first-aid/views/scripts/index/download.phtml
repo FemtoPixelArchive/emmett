@@ -1,0 +1,29 @@
+		<div id="nav-list">
+			<div id='wrapper'>
+				<div class="li">
+					<div class='boxdownload'>
+						<div class='cover'>
+							<div class="front">
+								<a href="<?php echo $this->url(array('module' => 'first-aid', 'controller' => 'index', 'action' => 'download-album', 'lang' => Zend_Registry::getInstance()->locale), 'downloadalbum') ?>" rel="nolink"><img src="<?php echo $this->baseUrl() ?>/<?php echo $this->album['cover'] ?>" /></a>
+							</div>
+						</div>
+						<div class='links'>
+							<?php echo tr('Give what you want and download')?>
+							<div id='countdown'>
+								<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target='_blank'>
+									<input type="hidden" name="cmd" value="_s-xclick">
+									<input type="hidden" name="hosted_button_id" value="Y64LAX2HZQQBJ">
+									<?php if ($this->layout()->locale == 'fr') : ?>
+									<input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+									<?php else : ?>
+									<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+									<?php endif; ?>
+									<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+								</form>
+								<a href="<?php echo $this->url(array('module' => 'first-aid', 'controller' => 'index', 'action' => 'download-album', 'lang' => Zend_Registry::getInstance()->locale), 'downloadalbum') ?>" rel="nolink"><?php echo tr('Download') ?></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

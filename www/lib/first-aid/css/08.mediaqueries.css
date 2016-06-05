@@ -1,0 +1,8 @@
+@media only screen and (max-height:760px) {
+ #footer {
+	left:0;
+	top:0;
+	width:50px;
+	margin:10px 10px 0 0;
+ }
+}

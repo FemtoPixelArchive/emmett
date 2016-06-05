@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<title>EMMETT | <?php echo tr('Compatibility') ?></title>
+		<meta charset="UTF-8">
+		<meta name="robots" content="noindex,nofollow">
+		<style>
+			html, body {
+				color:#fff;
+				background-color:#000;
+				font-size:18px;
+			}
+			
+			a:visited, a:hover, a {
+				color:#fff;
+			}
+		</style>
+		<meta property="og:title" content="<?php echo tr('EMMETT - Fighting Fate EP') ?>" />
+		<meta property="og:url" content="http://<?php echo $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI']?>" />
+		<meta property="og:image" content="http://<?php echo $_SERVER['SERVER_NAME'] ?>/img/fighting-fate-ep/cover.jpg" />
+		<meta property="og:description" content='<?php echo tr('Their first EP "Fighting Fate" now available on iTunes: http://goo.gl/bN9RPo') ?>' />
+		<?php if ($this->redirect) : ?>
+			<meta HTTP-EQUIV="REFRESH" content="0; url=<?php echo $this->url(array('module' => 'fighting-fate-ep', 'controller' => 'index', 'action' => 'index'), 'front') ?>">
+		<?php endif; ?>
+	</head>
+	<body>
+		<div id='content'>
+			<div id='full'>
+			<p>
+				<?php echo tr('Your browser does not seem compatible to fully enjoy the EMMETT\'s website experience. We suggest you to use <a href="http://www.google.com/chrome">Chrome</a>.') ?>
+			</p>
+			<p>
+				<?php printf(tr('You are actually using %s version %s'), $this->device->getBrowser(), $this->device->getBrowserVersion()); ?>
+			</p>
+			<p>
+				<?php echo tr('Would you like to see the site in a degraded compatible version?') ?>
+			</p>
+			<a href="<?php echo $this->url(array('decision' => 'no', 'module' => 'fighting-fate-ep', 'controller' => 'index', 'action' => 'advice'), 'front') ?>" class="left"><?php echo tr('no') ?></a>
+			<a href="<?php echo $this->url(array('decision' => 'yes', 'module' => 'fighting-fate-ep', 'controller' => 'index', 'action' => 'advice'), 'front') ?>" class="right"><?php echo tr('yes') ?></a>
+			</div>
+		</div>
+	</body>
+</html>

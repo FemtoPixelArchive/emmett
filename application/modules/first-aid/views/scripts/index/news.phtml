@@ -1,0 +1,7 @@
+<div id='news'>
+<?php foreach ($this->feed as $key => $item) {
+	$function = 'render' . ucfirst(strtolower($item['social']));
+	echo $this->$function($item, $key);
+}
+?>
+</div>

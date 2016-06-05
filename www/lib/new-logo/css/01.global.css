@@ -1,0 +1,66 @@
+html, body {
+	background-color: #000000;
+	margin: 0px;
+	overflow: hidden;
+	color: #ffffff;
+}
+
+#footer {
+	bottom: 0;
+	height: 100px;
+	left: 200px;
+	position: absolute;
+	right: 200px;
+	margin:0;
+	text-align:center;
+	z-index:1;
+}
+
+#countertext {
+  text-align:center;
+  width:100%;
+  font-size:20px;
+}
+
+#typing {
+  text-align:center;
+  width:100%;
+  font-size:10px;
+}
+
+#logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);    
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#donate{
+	position:absolute;
+	bottom:0;
+	right:20px;
+	z-index:2;
+}
+
+.later {
+	display:none;
+}
+
+#locale {
+	top:5px;
+	right:5px;
+	position:absolute;
+	z-index:3;
+}
+
+a, a:link, a:visited, a:hover {
+	color: #ffffff;
+	text-decoration:none;
+}
+
+#logoBottom, #logoTop {
+  position:absolute;
+}

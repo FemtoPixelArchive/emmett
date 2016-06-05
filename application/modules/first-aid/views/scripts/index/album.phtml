@@ -1,0 +1,40 @@
+		<?php if (count($this->albums) > 1 ) : ?>
+		<a href="#" id="prev"><img src='<?php echo $this->baseUrl() ?>/img/first-aid/button_prev.png' /></a>
+		<a href="#" id="next"><img src='<?php echo $this->baseUrl() ?>/img/first-aid/button_next.png' /></a>
+		<?php endif;?>
+		<div id="nav-list">
+			<div id='wrapper'>
+				<?php $flag = false; ?>
+				<div class="li">
+					<div class='box'>
+						<div class='cover'>
+							<div class="back" style='background-image:url("<?php echo $this->baseUrl() ?>/<?php echo $this->album['back'] ?>");'>
+								<p class='tracks'>
+									<?php foreach ($this->album['tracks'] as $title => $track) :?>
+									<a href="<?php echo $this->baseUrl() ?>/<?php echo $track['ogg']?>" style='<?php echo $track['style']?>' rel='nolink' title="<?php echo $title ?>" data-tag="track_<?php echo str_replace(' ', '_', $title) ?>"></a>
+									<?php endforeach; ?>
+								</p>
+							</div>
+							<div class="front"><img src="<?php echo $this->baseUrl() ?>/<?php echo $this->album['cover'] ?>" /></div>
+						</div>
+						<div class='support'>
+							<div class="cd" id="turntable"><img src="<?php echo $this->baseUrl() ?>/<?php echo $this->album['disk'] ?>" /></div>
+						</div>
+						<div class='links'>
+							<?php echo tr('Available now')?>
+							<div id='countdown'>
+								<a href="http://www.amazon.co.uk/First-Aid/dp/B008FK45JE" title="Amazon" target="_blank" data-tag="buy_amazon"><img src="<?php echo $this->baseUrl()?>/img/first-aid/amazon.png"  width="42" height="42"/></a>
+								<a href="http://www.deezer.com/fr/music/emmett/first-aid-3944321" title="Deezer" target="_blank" data-tag="buy_deezer"><img src="<?php echo $this->baseUrl()?>/img/first-aid/deezer.png"  width="42" height="42"/></a>
+								<a href="http://itunes.apple.com/fr/album/first-aid/id539188205" title="iTunes" data-tag="buy_itunes"><img src="<?php echo $this->baseUrl()?>/img/first-aid/itunes.png"  width="42" height="42" target="_blank"/></a>
+								<a href="http://open.spotify.com/album/3PsEnF4uftP0EJcf36tzn5" title="Spotify" data-tag="buy_spotify"><img src="<?php echo $this->baseUrl()?>/img/first-aid/spotify.png"  width="42" height="42" target="_blank"/></a>
+								<a href="http://www.virginmega.fr/musique/album/first-aid-emmett-114736587%2cpage1.htm" title="VirginMega" data-tag="buy_virgin"><img src="<?php echo $this->baseUrl()?>/img/first-aid/virgin.png"  width="42" height="42" target="_blank"/></a>
+							</div>
+							<a href="<?php echo $this->url(array('module' => 'first-aid', 'controller' => 'index', 'action' => 'download', 'lang' => Zend_Registry::getInstance()->locale), 'download') ?>"><?php echo tr('Download') ?></a>
+						</div>
+						<?php if (!$flag) : $flag = true; ?>
+						<div id='aura'>■</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
+		</div>

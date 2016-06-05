@@ -1,0 +1,34 @@
+<?php if ($this->pageCount > 1): ?>
+<div class="pagination">
+<?php if ($this->current != $this->first): ?>
+	<span><a href="<?php echo $this->url(array('page' => $this->first)); ?>" id="first" title="<?php echo tr('go to first page'); ?>"><img src="<?php echo $this->baseUrl() ?>/images/back/pagination-arrow-prev.gif" alt="<?php echo tr('go to first page'); ?>"/><img src="<?php echo $this->baseUrl() ?>/images/back/pagination-arrow-prev.gif" alt="<?php echo tr('go to first page'); ?>"/> <?php echo mb_strtolower(tr('First'));?></a></span>
+<?php endif; ?>
+<?php if (isset($this->previous)): ?>
+	<span><a href="<?php echo $this->url(array('page' => $this->previous)); ?>" id="previous" title="<?php echo tr('go to previous page'); ?>"><img src="<?php echo $this->baseUrl() ?>/images/back/pagination-arrow-prev.gif" alt="<?php echo tr('go to previous page'); ?>"/> <?php echo mb_strtolower(tr('Previous'));?></a></span>
+<?php endif; ?>
+<?php if ($this->firstPageInRange > 1) :?>
+   ... |
+<?php endif; ?>
+  
+<?php foreach ($this->pagesInRange as $page): ?>
+  <?php if ($this->firstPageInRange != $page) :?>
+   | 
+  <?php endif; ?>
+  <?php if ($page != $this->current): ?>
+	<a href="<?php echo $this->url(array('page' => $page)); ?>" title="<?php echo sprintf(tr('go to page %s'), $page); ?>"><?php echo $page; ?></a>
+  <?php else: ?>
+	<span class="active"><?php echo $page; ?></span>
+  <?php endif; ?>
+<?php endforeach; ?>
+<?php if ($this->lastPageInRange < $this->pageCount) :?>
+   | ... 
+<?php endif; ?>
+<?php if (isset($this->next)): ?>
+	<span><a href="<?php echo $this->url(array('page' => $this->next)); ?>" id="next" title="<?php echo tr('go to next page');?>"><?php echo mb_strtolower(tr('Next'));?> <img src="<?php echo $this->baseUrl() ?>/images/back/pagination-arrow-next.gif" alt="<?php echo tr('go to next page'); ?>"/></a></span>
+<?php endif; ?>
+<?php if ($this->current != $this->last): ?>
+	<span><a href="<?php echo $this->url(array('page' => $this->last)); ?>" id="last" title="<?php echo tr('go to last page'); ?>"><?php echo mb_strtolower(tr('Last'));?> <img src="<?php echo $this->baseUrl() ?>/images/back/pagination-arrow-next.gif" alt="<?php echo tr('go to last page'); ?>"/><img src="<?php echo $this->baseUrl() ?>/images/back/pagination-arrow-next.gif" alt="<?php echo tr('go to last page'); ?>"/></a></span>
+<?php endif; ?>
+
+</div>
+<?php endif; ?>

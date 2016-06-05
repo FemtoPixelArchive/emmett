@@ -1,0 +1,64 @@
+	<a href="#" id="prev"><img src='<?php echo $this->baseUrl() ?>/img/first-aid/button_prev.png' /></a>
+	<a href="#" id="next"><img src='<?php echo $this->baseUrl() ?>/img/first-aid/button_next.png' /></a>
+
+	<div id="nav-list">
+		<div id='wrapper'>
+			<?php if ($this->action != 'bass') :?>
+			<div class="li">
+				<div class='box'>
+					<div class='cover'>
+						<div class="back"><img src="<?php echo $this->baseUrl() ?>/img/first-aid/sing.<?php echo Zend_Registry::getInstance()->locale?>.png" /></div>
+						<div class="front"><img src="<?php echo $this->baseUrl() ?>/img/first-aid/sing.<?php echo Zend_Registry::getInstance()->locale?>.png" /></div>
+					</div>
+					<div class='support' style='height:400px;overflow:auto'>
+						<?php foreach ($this->infos['lyrics'] as $title => $link) : ?>
+						<a href='<?php echo $this->baseUrl() ?>/lyrics/first-aid/<?php echo $link?>' style='display:block;clear:both;' target='_blank'><?php echo $title?></a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+			
+			<div class="li">
+				<div class='box'>
+					<div class='cover'>
+						<div class="back"><img src="<?php echo $this->baseUrl() ?>/img/first-aid/bass.<?php echo Zend_Registry::getInstance()->locale?>.png" /></div>
+						<div class="front"><img src="<?php echo $this->baseUrl() ?>/img/first-aid/bass.<?php echo Zend_Registry::getInstance()->locale?>.png" /></div>
+					</div>
+					<div class='support' style='height:400px;overflow:auto'>
+						<?php foreach ($this->infos['bass'] as $title => $link) : ?>
+						<?php echo $title ?> <a href='<?php echo $this->baseUrl() ?>/tab/first-aid/bass/<?php echo $link['pdf'] ?>'>PDF</a> | <a href='<?php echo $this->baseUrl() ?>/tab/bass/<?php echo $link['gpx'] ?>' target='_blank'>GPX</a><br/>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+			<?php else : ?>
+			<div class="li">
+				<div class='box'>
+					<div class='cover'>
+						<div class="back"><img src="<?php echo $this->baseUrl() ?>/img/first-aid/bass.<?php echo Zend_Registry::getInstance()->locale?>.png" /></div>
+						<div class="front"><img src="<?php echo $this->baseUrl() ?>/img/first-aid/bass.<?php echo Zend_Registry::getInstance()->locale?>.png" /></div>
+					</div>
+					<div class='support' style='height:400px;overflow:auto'>
+						<?php foreach ($this->infos['bass'] as $title => $link) : ?>
+						<?php echo $title ?> <a href='<?php echo $this->baseUrl() ?>/tab/first-aid/bass/<?php echo $link['pdf'] ?>'>PDF</a> | <a href='<?php echo $this->baseUrl() ?>/tab/first-aid/bass/<?php echo $link['gpx'] ?>' target='_blank'>GPX</a><br/>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+			
+			<div class="li">
+				<div class='box'>
+					<div class='cover'>
+						<div class="back"><img src="<?php echo $this->baseUrl() ?>/img/first-aid/sing.<?php echo Zend_Registry::getInstance()->locale?>.png" /></div>
+						<div class="front"><img src="<?php echo $this->baseUrl() ?>/img/first-aid/sing.<?php echo Zend_Registry::getInstance()->locale?>.png" /></div>
+					</div>
+					<div class='support' style='height:400px;overflow:auto'>
+						<?php foreach ($this->infos['lyrics'] as $title => $link) : ?>
+						<a href='<?php echo $this->baseUrl() ?>/lyrics/first-aid/<?php echo $link?>' style='display:block;clear:both;' target='_blank'><?php echo $title?></a>
+						<?php endforeach; ?>
+					</div>
+				</div>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>

@@ -1,0 +1,106 @@
+#nav-list .box .cover, #nav-list .boxdownload .cover {
+	width:800px;
+	height:400px;
+	z-index:4;
+	position:absolute;
+}
+
+#nav-list .boxdownload .cover {
+	width:800px;
+	margin-left:200px;
+}
+
+#nav-list .box .support, #nav-list .boxdownload .support {
+	background-color:#000000;
+	position:absolute;
+	margin-left:400px;
+	width:400px;
+	height:400px;
+	z-index:2;
+}
+#nav-list .box .links, #nav-list .boxdownload .links {
+	z-index:2;
+	height: 100px;
+	position: absolute;
+	margin:0;
+	text-align:center;
+	top:420px;
+	left:0;
+	width:800px;
+	font-size:32pt;
+	font-family: 'TheDreamerFontByBillyArgelaRg';
+}
+#nav-list .boxdownload .links {
+	width:800px;
+}
+
+#nav-list .box .links #countdown, #nav-list .boxdownload .links #countdown {
+	display:block;
+	clear:both;
+	font-size:25pt;
+}
+
+#nav-list .box .front, #nav-list .boxdownload .front {
+	cursor:pointer;
+}
+
+#nav-list .box .back, #nav-list .box .front,
+#nav-list .boxdownload .back, #nav-list .boxdownload .front {
+	width:400px;
+	height:400px;
+	text-decoration:none;
+	float:left;
+}
+
+#nav-list .box .back, #nav-list .boxdownload .back {
+	visibility:hidden;
+}
+
+#nav-list .box .cd, #nav-list .boxdownload .cd {
+	width:400px;
+	height:400px;
+}
+
+#nav-list {
+	width:100%;
+}
+#nav-list .li {
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:100%;
+}
+#nav-list .li:first {
+	position:absolute;
+	width:100%;
+	height:100%;
+	left:0;
+}
+#nav-list .box, #nav-list .boxdownload {
+	position:relative;
+	top:40%;
+	margin-top:-200px;
+	left:50%;
+	margin-left: -600px;
+}
+
+#nav-list .boxdownload {
+	margin-left: -400px;
+}
+
+#wrapper {
+	overflow:hidden;
+}
+
+#aura {
+	color: #FFFFFF;
+	font-size: 550px;
+	height: 400px;
+	line-height: 100px;
+	margin-left: 400px;
+	margin-top: 90px;
+	position: absolute;
+	text-align: center;
+	width: 400px;
+	z-index: 1;
+}
